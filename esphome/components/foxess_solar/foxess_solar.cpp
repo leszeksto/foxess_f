@@ -136,39 +136,39 @@ void FoxessSolar::parse_message() {
   }
 
   auto &msg = this->input_buffer;
-  #publish_sensor_state(this->grid_power_, encode_int16(msg[9], msg[10]), 1);
-   publish_sensor_state(this->grid_power_, encode_int16(msg[175], msg[176]), 1);
-  #publish_sensor_state(this->generation_power_, encode_uint16(msg[11], msg[12]), 1);
-   publish_sensor_state(this->generation_power_, encode_uint16(msg[17], msg[18]), 1);
-  #publish_sensor_state(this->loads_power_, encode_int16(msg[13], msg[14]), 1);
+  //publish_sensor_state(this->grid_power_, encode_int16(msg[9], msg[10]), 1);
+  publish_sensor_state(this->grid_power_, encode_int16(msg[175], msg[176]), 1);
+  //publish_sensor_state(this->generation_power_, encode_uint16(msg[11], msg[12]), 1);
+  publish_sensor_state(this->generation_power_, encode_uint16(msg[17], msg[18]), 1);
+  //publish_sensor_state(this->loads_power_, encode_int16(msg[13], msg[14]), 1);
    publish_sensor_state(this->loads_power_, encode_int16(msg[19], msg[20]), 1);
 
-  #publish_sensor_state(this->phases_[0].voltage_sensor_, encode_uint16(msg[15], msg[16]), 0.1);
-   publish_sensor_state(this->phases_[0].voltage_sensor_, encode_uint16(msg[21], msg[22]), 0.1);
-  #publish_sensor_state(this->phases_[0].current_sensor_, encode_uint16(msg[17], msg[18]), 0.1);
-   publish_sensor_state(this->phases_[0].current_sensor_, encode_uint16(msg[23], msg[24]), 0.1);
-  #publish_sensor_state(this->phases_[0].frequency_sensor_, encode_uint16(msg[19], msg[20]), 0.01);
-   publish_sensor_state(this->phases_[0].frequency_sensor_, encode_uint16(msg[25], msg[26]), 0.01);
-  #publish_sensor_state(this->phases_[0].active_power_sensor_, encode_uint16(msg[21], msg[22]), 1);
-   publish_sensor_state(this->phases_[0].active_power_sensor_, encode_uint16(msg[27], msg[28]), 1);
+  //publish_sensor_state(this->phases_[0].voltage_sensor_, encode_uint16(msg[15], msg[16]), 0.1);
+  publish_sensor_state(this->phases_[0].voltage_sensor_, encode_uint16(msg[21], msg[22]), 0.1);
+  //publish_sensor_state(this->phases_[0].current_sensor_, encode_uint16(msg[17], msg[18]), 0.1);
+  publish_sensor_state(this->phases_[0].current_sensor_, encode_uint16(msg[23], msg[24]), 0.1);
+  //publish_sensor_state(this->phases_[0].frequency_sensor_, encode_uint16(msg[19], msg[20]), 0.01);
+  publish_sensor_state(this->phases_[0].frequency_sensor_, encode_uint16(msg[25], msg[26]), 0.01);
+  //publish_sensor_state(this->phases_[0].active_power_sensor_, encode_uint16(msg[21], msg[22]), 1);
+  publish_sensor_state(this->phases_[0].active_power_sensor_, encode_uint16(msg[27], msg[28]), 1);
 
-  #publish_sensor_state(this->phases_[1].voltage_sensor_, encode_uint16(msg[23], msg[24]), 0.1);
-   publish_sensor_state(this->phases_[1].voltage_sensor_, encode_uint16(msg[29], msg[30]), 0.1);
-  #publish_sensor_state(this->phases_[1].current_sensor_, encode_uint16(msg[25], msg[26]), 0.1);
-   publish_sensor_state(this->phases_[1].current_sensor_, encode_uint16(msg[31], msg[32]), 0.1);
-  #publish_sensor_state(this->phases_[1].frequency_sensor_, encode_uint16(msg[27], msg[28]), 0.01);
-   publish_sensor_state(this->phases_[1].frequency_sensor_, encode_uint16(msg[33], msg[34]), 0.01);
-  #publish_sensor_state(this->phases_[1].active_power_sensor_, encode_uint16(msg[29], msg[30]), 1);
-   publish_sensor_state(this->phases_[1].active_power_sensor_, encode_uint16(msg[35], msg[36]), 1);
+  //publish_sensor_state(this->phases_[1].voltage_sensor_, encode_uint16(msg[23], msg[24]), 0.1);
+  publish_sensor_state(this->phases_[1].voltage_sensor_, encode_uint16(msg[29], msg[30]), 0.1);
+  //publish_sensor_state(this->phases_[1].current_sensor_, encode_uint16(msg[25], msg[26]), 0.1);
+  publish_sensor_state(this->phases_[1].current_sensor_, encode_uint16(msg[31], msg[32]), 0.1);
+  //publish_sensor_state(this->phases_[1].frequency_sensor_, encode_uint16(msg[27], msg[28]), 0.01);
+  publish_sensor_state(this->phases_[1].frequency_sensor_, encode_uint16(msg[33], msg[34]), 0.01);
+  //publish_sensor_state(this->phases_[1].active_power_sensor_, encode_uint16(msg[29], msg[30]), 1);
+  publish_sensor_state(this->phases_[1].active_power_sensor_, encode_uint16(msg[35], msg[36]), 1);
 
-  #publish_sensor_state(this->phases_[2].voltage_sensor_, encode_uint16(msg[31], msg[32]), 0.1);
-   publish_sensor_state(this->phases_[2].voltage_sensor_, encode_uint16(msg[37], msg[38]), 0.1);
-  #publish_sensor_state(this->phases_[2].current_sensor_, encode_uint16(msg[33], msg[34]), 0.1);
-   publish_sensor_state(this->phases_[2].current_sensor_, encode_uint16(msg[39], msg[40]), 0.1);
-  #publish_sensor_state(this->phases_[2].frequency_sensor_, encode_uint16(msg[35], msg[36]), 0.01);
-   publish_sensor_state(this->phases_[2].frequency_sensor_, encode_uint16(msg[41], msg[42]), 0.01);
-  #publish_sensor_state(this->phases_[2].active_power_sensor_, encode_uint16(msg[37], msg[38]), 1);
-   publish_sensor_state(this->phases_[2].active_power_sensor_, encode_uint16(msg[43], msg[44]), 1);
+  //publish_sensor_state(this->phases_[2].voltage_sensor_, encode_uint16(msg[31], msg[32]), 0.1);
+  publish_sensor_state(this->phases_[2].voltage_sensor_, encode_uint16(msg[37], msg[38]), 0.1);
+  //publish_sensor_state(this->phases_[2].current_sensor_, encode_uint16(msg[33], msg[34]), 0.1);
+  publish_sensor_state(this->phases_[2].current_sensor_, encode_uint16(msg[39], msg[40]), 0.1);
+  //publish_sensor_state(this->phases_[2].frequency_sensor_, encode_uint16(msg[35], msg[36]), 0.01);
+  publish_sensor_state(this->phases_[2].frequency_sensor_, encode_uint16(msg[41], msg[42]), 0.01);
+  //publish_sensor_state(this->phases_[2].active_power_sensor_, encode_uint16(msg[37], msg[38]), 1);
+  publish_sensor_state(this->phases_[2].active_power_sensor_, encode_uint16(msg[43], msg[44]), 1);
 
   uint16_t volt = encode_uint16(msg[39], msg[40]);
   uint16_t amps = encode_uint16(msg[41], msg[42]);
