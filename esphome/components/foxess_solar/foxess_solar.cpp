@@ -139,7 +139,7 @@ void FoxessSolar::parse_message() {
   //publish_sensor_state(this->grid_power_, encode_int16(msg[9], msg[10]), 1);
   publish_sensor_state(this->grid_power_, encode_int16(msg[175], msg[176]), 1);
   //publish_sensor_state(this->generation_power_, encode_uint16(msg[11], msg[12]), 1);
-  publish_sensor_state(this->generation_power_, encode_uint16(msg[17], msg[18]), 1);
+  publish_sensor_state(this->generation_power_, encode_uint16(msg[15], msg[16]), 1);
   //publish_sensor_state(this->loads_power_, encode_int16(msg[13], msg[14]), 1);
    publish_sensor_state(this->loads_power_, encode_int16(msg[19], msg[20]), 1);
 
@@ -207,7 +207,7 @@ void FoxessSolar::parse_message() {
   //publish_sensor_state(this->inverter_temp_, encode_int16(msg[65], msg[66]), 1);
   publish_sensor_state(this->inverter_temp_, encode_int16(msg[71], msg[72]), 1);
   //publish_sensor_state(this->ambient_temp_, encode_int16(msg[67], msg[68]), 1);
-  publish_sensor_state(this->ambient_temp_, encode_int16(msg[73], msg[77]), 1);
+  publish_sensor_state(this->ambient_temp_, encode_int16(msg[73], msg[74]), 1);
 
   //publish_sensor_state(this->energy_production_day_, encode_uint16(msg[69], msg[70]), 0.1);
   publish_sensor_state(this->energy_production_day_, encode_uint16(msg[75], msg[76]), 0.1);
