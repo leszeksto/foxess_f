@@ -143,8 +143,9 @@ void FoxessSolar::parse_message() {
   //publish_sensor_state(this->loads_power_, encode_int16(msg[13], msg[14]), 1);
    publish_sensor_state(this->loads_power_, encode_int16(msg[19], msg[20]), 1);
 
+  uint16_t volt = encode_uint16(msg[21], msg[22]);
   //publish_sensor_state(this->phases_[0].voltage_sensor_, encode_uint16(msg[15], msg[16]), 0.1);
-  publish_sensor_state(this->phases_[0].voltage_sensor_, encode_uint16(msg[21], msg[22]), 0.1);
+  publish_sensor_state(this->phases_[0].voltage_sensor_, volt - 5, 0.1);
   //publish_sensor_state(this->phases_[0].current_sensor_, encode_uint16(msg[17], msg[18]), 0.1);
   publish_sensor_state(this->phases_[0].current_sensor_, encode_uint16(msg[23], msg[24]), 0.1);
   //publish_sensor_state(this->phases_[0].frequency_sensor_, encode_uint16(msg[19], msg[20]), 0.01);
