@@ -130,7 +130,8 @@ void FoxessSolar::parse_message() {
   ESP_LOGVV("FoxessSolar::parse_message", "start");
   this->millis_lastmessage_ = millis();
 
-  if (this->buffer_end + 1 != 163) {
+  //if (this->buffer_end + 1 != 163) {
+  if (this->buffer_end + 1 != 251) {
     ESP_LOGW("FoxessSolar::parse_message", "Unexpected msg length, length: %d", this->buffer_end + 1);
     this->status_set_warning();
   }
@@ -144,8 +145,9 @@ void FoxessSolar::parse_message() {
    publish_sensor_state(this->loads_power_, encode_int16(msg[19], msg[20]), 1);
 
   uint16_t volt = encode_uint16(msg[21], msg[22]);
+  volt = volt - 100;
   //publish_sensor_state(this->phases_[0].voltage_sensor_, encode_uint16(msg[15], msg[16]), 0.1);
-  publish_sensor_state(this->phases_[0].voltage_sensor_, volt - 5, 0.1);
+  publish_sensor_state(this->phases_[0].voltage_sensor_, volt, 0.1);
   //publish_sensor_state(this->phases_[0].current_sensor_, encode_uint16(msg[17], msg[18]), 0.1);
   publish_sensor_state(this->phases_[0].current_sensor_, encode_uint16(msg[23], msg[24]), 0.1);
   //publish_sensor_state(this->phases_[0].frequency_sensor_, encode_uint16(msg[19], msg[20]), 0.01);
